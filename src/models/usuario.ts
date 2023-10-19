@@ -1,9 +1,10 @@
-import Tecnologia from "./tecnologia";
+import { Tecnologia } from './Tecnologia';
 
-interface User {
+interface Usuario {
+  id: string;
   nome: string;
-  username: string;
+  nomeusuario: string;
   tecnologias: Tecnologia[];
 }
 
-export default User;
+export { Usuario };

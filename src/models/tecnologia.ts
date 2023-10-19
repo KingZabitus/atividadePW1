@@ -1,8 +1,9 @@
 interface Tecnologia {
-    id: number;
+    id: string;
     titulo: string;
-    deadline: string;
-    foiEstudada: boolean;
+    estudada: boolean;
+    dataLimite: Date;
+    criadoEm: Date;
   }
   
-  export default Tecnologia;
+  export { Tecnologia };
