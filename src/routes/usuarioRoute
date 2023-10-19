@@ -1,0 +1,16 @@
+import express, { Request, Response } from "express";
+import { criarUsuario, acharUsuarioPorNome } from "../services/usuarioService"
+
+const userRouter = express.Router();
+
+userRouter.post("/", (req: Request, res: Response) => {
+  const { name, username } = req.body;
+  const existingUser = acharUsuarioPorNome(username);
+  if (existingUser) {
+    return res.status(400).json({ error: "Username already exists" });
+  }
+  const newUser = criarUsuario(name, username);
+  return res.status(201).json(newUser);
+});
+
+export default userRouter;
